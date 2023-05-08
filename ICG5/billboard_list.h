@@ -16,44 +16,32 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TECHNIQUE_H
-#define	TECHNIQUE_H
+#ifndef BILLBOARD_LIST_H
+#define	BILLBOARD_LIST_H
 
-#include <list>
-#include <GL/glew.h>
+#include <string>
 
-class Technique
+#include "texture.h"
+#include "billboard_technique.h"
+
+class BillboardList
 {
 public:
-
-    Technique();
-
-    ~Technique();
-
-    virtual bool Init();
-
-    void Enable();
-
-protected:
-
-    bool AddShader(GLenum ShaderType, const char* pShaderText);
-
-    bool Finalize();
-
-    GLint GetUniformLocation(const char* pUniformName);
+    BillboardList();    
+    ~BillboardList();
     
-    GLint GetProgramParam(GLint param);
+    bool Init(const std::string& TexFilename);
+    
+    void Render(const Matrix4f& VP, const Vector3f& CameraPos);
 
 private:
-
-    GLuint m_shaderProg;    
-
-    typedef std::list<GLuint> ShaderObjList;
-    ShaderObjList m_shaderObjList;
+    void CreatePositionBuffer();
+    
+    GLuint m_VB;
+    Texture* m_pTexture;
+    BillboardTechnique m_technique;
 };
 
-#define INVALID_UNIFORM_LOCATION 0xFFFFFFFF
 
-
-#endif	/* TECHNIQUE_H */
+#endif	/* BILLBOARD_LIST_H */
 

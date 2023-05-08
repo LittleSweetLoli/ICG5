@@ -26,7 +26,6 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-
 #include "util.h"
 #include "math_3d.h"
 #include "texture.h"

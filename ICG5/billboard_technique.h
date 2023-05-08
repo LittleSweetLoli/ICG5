@@ -1,6 +1,5 @@
 /*
-
-	Copyright 2011 Etay Meiri
+        Copyright 2011 Etay Meiri
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,44 +15,30 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TECHNIQUE_H
-#define	TECHNIQUE_H
+#ifndef BILLBOARD_TECHNIQUE_H
+#define	BILLBOARD_TECHNIQUE_H
 
-#include <list>
-#include <GL/glew.h>
+#include "technique.h"
+#include "math_3d.h"
 
-class Technique
+class BillboardTechnique : public Technique 
 {
 public:
-
-    Technique();
-
-    ~Technique();
-
-    virtual bool Init();
-
-    void Enable();
-
-protected:
-
-    bool AddShader(GLenum ShaderType, const char* pShaderText);
-
-    bool Finalize();
-
-    GLint GetUniformLocation(const char* pUniformName);
     
-    GLint GetProgramParam(GLint param);
-
+    BillboardTechnique();
+ 
+    virtual bool Init();
+    
+    void SetVP(const Matrix4f& VP);
+    void SetCameraPosition(const Vector3f& Pos);
+    void SetColorTextureUnit(unsigned int TextureUnit);
+    
 private:
 
-    GLuint m_shaderProg;    
-
-    typedef std::list<GLuint> ShaderObjList;
-    ShaderObjList m_shaderObjList;
+    GLuint m_VPLocation;
+    GLuint m_cameraPosLocation;
+    GLuint m_colorMapLocation;
 };
 
-#define INVALID_UNIFORM_LOCATION 0xFFFFFFFF
-
-
-#endif	/* TECHNIQUE_H */
+#endif	/* BILLBOARD_TECHNIQUE_H */
 

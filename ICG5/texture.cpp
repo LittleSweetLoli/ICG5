@@ -18,7 +18,6 @@
 
 #include <iostream>
 #include "texture.h"
-#include <Magick++.h>
 
 Texture::Texture(GLenum TextureTarget, const std::string& FileName)
 {
