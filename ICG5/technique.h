@@ -1,6 +1,6 @@
 /*
 
-	Copyright 2011 Etay Meiri
+    Copyright 2011 Etay Meiri
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -41,11 +41,11 @@ protected:
     bool Finalize();
 
     GLint GetUniformLocation(const char* pUniformName);
-    
+
     GLint GetProgramParam(GLint param);
-    
-    GLuint m_shaderProg;    
-    
+
+    GLuint m_shaderProg;
+
 private:
 
     typedef std::list<GLuint> ShaderObjList;

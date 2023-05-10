@@ -1,6 +1,6 @@
 /*
 
-	Copyright 2011 Etay Meiri
+    Copyright 2011 Etay Meiri
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ public:
     virtual void RenderSceneCB() = 0;
 
     virtual void IdleCB() = 0;
-    
+
     virtual void MouseCB(int Button, int State, int x, int y) = 0;
 };
 

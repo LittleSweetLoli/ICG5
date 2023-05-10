@@ -1,5 +1,5 @@
 /*
-	Copyright 2010 Etay Meiri
+    Copyright 2010 Etay Meiri
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@ class Pipeline
 public:
     Pipeline()
     {
-        m_scale      = Vector3f(1.0f, 1.0f, 1.0f);
-        m_worldPos   = Vector3f(0.0f, 0.0f, 0.0f);
+        m_scale = Vector3f(1.0f, 1.0f, 1.0f);
+        m_worldPos = Vector3f(0.0f, 0.0f, 0.0f);
         m_rotateInfo = Vector3f(0.0f, 0.0f, 0.0f);
     }
 
@@ -43,7 +43,7 @@ public:
         m_worldPos.y = y;
         m_worldPos.z = z;
     }
-    
+
     void WorldPos(const Vector3f& Pos)
     {
         m_worldPos = Pos;

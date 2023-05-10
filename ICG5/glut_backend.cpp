@@ -1,6 +1,6 @@
 /*
 
-	Copyright 2011 Etay Meiri
+    Copyright 2011 Etay Meiri
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,11 +16,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-//#include <unistd.h>
 #include <stdio.h>
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 
+#include "util.h"
 #include "glut_backend.h"
 
 // Points to the object implementing the ICallbacks interface which was delivered to
@@ -77,7 +77,7 @@ static void InitCallbacks()
 void GLUTBackendInit(int argc, char** argv)
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA|GLUT_DEPTH);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
     glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 }
 
@@ -86,7 +86,7 @@ bool GLUTBackendCreateWindow(unsigned int Width, unsigned int Height, unsigned i
 {
     if (isFullScreen) {
         char ModeString[64] = { 0 };
-        snprintf(ModeString, sizeof(ModeString), "%dx%d@%d", Width, Height, bpp);
+        SNPRINTF(ModeString, sizeof(ModeString), "%dx%d@%d", Width, Height, bpp);
         glutGameModeString(ModeString);
         glutEnterGameMode();
     }

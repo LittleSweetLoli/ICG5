@@ -1,6 +1,6 @@
 /*
 
-	Copyright 2010 Etay Meiri
+    Copyright 2010 Etay Meiri
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ const Matrix4f& Pipeline::GetVPTrans()
     CameraTranslationTrans.InitTranslationTransform(-m_camera.Pos.x, -m_camera.Pos.y, -m_camera.Pos.z);
     CameraRotateTrans.InitCameraTransform(m_camera.Target, m_camera.Up);
     PersProjTrans.InitPersProjTransform(m_persProjInfo);
-    
+
     m_VPTtransformation = PersProjTrans * CameraRotateTrans * CameraTranslationTrans;
     return m_VPTtransformation;
 }
